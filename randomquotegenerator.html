@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #container{
+             text-align: center;      /*       all to centerof page */
+
+        }
+        #randomquote{
+            color:black;
+            background-color: red;
+            border: 6px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div id ="container">
+    <h1 id="heading">Random quote generator</h1>
+    <button id="btn">Click here</button>
+    <p id="randomquote"></p>
+    
+</div>
+
+<script>
+   
+    // window.onload=function(){       //1       //window load hole ei func call hbe
+        getquote();
+    // }
+
+    function getquote(){                         
+
+        var btn=document.getElementById("btn");
+        var q=document.getElementById("randomquote");
+        btn.onclick=function(){         //on click r somoy function er nam likhte hye na
+            popo();
+        }
+     function   popo(){
+        var quotes=[
+                "Spread love everywhere you go. Let no one ever come to you without leaving happier. -Mother Teresa",
+                "When you reach the end of your rope, tie a knot in it and hang on. -Franklin D. Roosevelt",
+                "Always remember that you are absolutely unique. Just like everyone else. -Margaret Mead",
+                "Don't judge each day by the harvest you reap but by the seeds that you plant. -Robert Louis Stevenson",
+                "The future belongs to those who believe in the beauty of their dreams. -Eleanor Roosevelt",
+                "Tell me and I forget. Teach me and I remember. Involve me and I learn. -Benjamin Franklin",
+                "The best and most beautiful things in the world cannot be seen or even touched — they must be felt with the heart. -Helen Keller",
+                "It is during our darkest moments that we must focus to see the light. -Aristotle",
+                "Whoever is happy will make others happy too. -Anne Frank",
+                "Do not go where the path may lead, go instead where there is no path and leave a trail. -Ralph Waldo Emerson"
+        ];
+       
+        var rand=Math.floor(Math.random() *10);                            //return value below 1 *x=x-1 math.floor to chng to int datatype
+        q.textContent="\""+quotes[rand]+"\"";  //"" anar jnno
+        }
+    }
+</script>
+</body>
+</html>
